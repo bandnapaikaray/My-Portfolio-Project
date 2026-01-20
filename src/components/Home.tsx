@@ -23,8 +23,7 @@ import {
   SiTailwindcss,
   SiHtml5,
   SiCss3,
-  SiJavascript,
-  SiFigma
+  SiJavascript
 } from "react-icons/si";
 
 export default function Home() {
@@ -111,79 +110,82 @@ export default function Home() {
       </section>
 
       {/* ABOUT ME SECTION */}
-      <AboutMe />
-
-      {/* SKILLS SECTION */}
-      <section id="skills" className="py-24 bg-card/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading title="My Tech Stack" subtitle="Skills & Tools" />
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
-            {[
-              { name: "React", icon: SiReact, color: "#61DAFB" },
-              { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-              { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-              { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
-              { name: "Tailwind", icon: SiTailwindcss, color: "#38B2AC" },
-              { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-              { name: "CSS3", icon: SiCss3, color: "#1572B6" },
-              { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-            ].map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-white/5 hover:border-primary/50 transition-colors group"
-              >
-                <skill.icon size={40} style={{ color: skill.color }} className="mb-4 transition-all duration-300" />
-                <span className="font-medium text-muted-foreground group-hover:text-foreground transition-colors">{skill.name}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      <section id="about">
+        <AboutMe />
       </section>
 
-      {/* SERVICES SECTION */}
-      <section id="services" className="py-24">
+      {/* SKILLS SECTION - Combined Tech Stack & Services */}
+      <section id="skills" className="py-24 bg-card/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading title="What I Do" subtitle="Services" />
+          <SectionHeading title="Skills & Expertise" subtitle="What I Bring to the Table" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Layout,
-                title: "Website Development",
-                desc: "Building fast, responsive, and SEO-friendly websites using modern frameworks like React and Next.js."
-              },
-              {
-                icon: Smartphone,
-                title: "App Development",
-                desc: "Creating cross-platform mobile applications with seamless user experiences and native-like performance."
-              },
-              {
-                icon: Code2,
-                title: "Web Design",
-                desc: "Translating design mockups into pixel-perfect code with attention to detail and interaction design."
-              }
-            ].map((service, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.2 }}
-                className="p-8 rounded-3xl bg-card border border-white/5 hover:border-primary/30 transition-all duration-300 group hover:-translate-y-2"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon size={32} />
-                </div>
-                <h3 className="text-xl font-display font-bold mb-4">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{service.desc}</p>
-              </motion.div>
-            ))}
+          {/* Tech Stack */}
+          <div className="mb-16">
+            {/* <h3 className="text-2xl font-display font-bold mb-8 text-center">Tech Stack</h3> */}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+              {[
+                { name: "React", icon: SiReact, color: "#61DAFB" },
+                { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+                { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+                { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
+                { name: "Tailwind", icon: SiTailwindcss, color: "#38B2AC" },
+                { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+                { name: "CSS3", icon: SiCss3, color: "#1572B6" },
+                { name: "Native", icon: SiReact, color: "#61DAFB" },
+              ].map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                  className="flex flex-col items-center justify-center p-6 bg-card rounded-2xl border border-white/5 hover:border-primary/50 transition-colors group"
+                >
+                  <skill.icon size={40} style={{ color: skill.color }} className="mb-4 transition-all duration-300" />
+                  <span className="font-medium text-muted-foreground group-hover:text-foreground transition-colors">{skill.name}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Services/What I Do */}
+          <div>
+            {/* <h3 className="text-2xl font-display font-bold mb-8 text-center">What I Do</h3> */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: Layout,
+                  title: "Website Development",
+                  desc: "Building fast, responsive, and SEO-friendly websites using modern frameworks like React and Next.js."
+                },
+                {
+                  icon: Smartphone,
+                  title: "App Development",
+                  desc: "Creating cross-platform mobile applications with seamless user experiences and native-like performance."
+                },
+                {
+                  icon: Code2,
+                  title: "Web Design",
+                  desc: "Translating design mockups into pixel-perfect code with attention to detail and interaction design."
+                }
+              ].map((service, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.2 }}
+                  className="p-8 rounded-3xl bg-card border border-white/5 hover:border-primary/30 transition-all duration-300 group hover:-translate-y-2"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <service.icon size={32} />
+                  </div>
+                  <h3 className="text-xl font-display font-bold mb-4">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{service.desc}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

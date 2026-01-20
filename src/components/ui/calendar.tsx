@@ -52,13 +52,13 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ className, ...props }: { className?: string; [key: string]: any }) => (
+        IconLeft: ({ className, ...props }: React.ComponentPropsWithoutRef<"svg"> & { className?: string }) => (
           <ChevronLeft className={cn("h-4 w-4", className)} {...props} />
         ),
-        IconRight: ({ className, ...props }: { className?: string; [key: string]: any }) => (
+        IconRight: ({ className, ...props }: React.ComponentPropsWithoutRef<"svg"> & { className?: string }) => (
           <ChevronRight className={cn("h-4 w-4", className)} {...props} />
         ),
-      } as any}
+      } as React.ComponentProps<typeof DayPicker>["components"]}
       {...props}
     />
   )

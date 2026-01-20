@@ -8,7 +8,9 @@ import { cn } from "@/lib/utils"
 const ResizablePanelGroup = ({
   className,
   ...props
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: any) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Component = (ResizablePrimitive as any).PanelGroup
   return (
     <Component
@@ -21,13 +23,16 @@ const ResizablePanelGroup = ({
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ResizablePanel = (ResizablePrimitive as any).Panel
 
 const ResizableHandle = ({
   withHandle,
   className,
   ...props
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: any) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Component = (ResizablePrimitive as any).PanelResizeHandle
   return (
     <Component

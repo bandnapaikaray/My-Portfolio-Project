@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 interface InsertMessage {
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export function useContact() {

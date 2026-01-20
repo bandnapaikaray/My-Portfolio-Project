@@ -1,30 +1,36 @@
 import { motion } from "framer-motion";
-import { Code2, Smartphone, Palette } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 export function AboutMe() {
-    const services = [
+    const workExperience = [
         {
-            icon: Code2,
-            title: "Website Development",
-            description: "Building fast, responsive, and SEO-friendly websites using modern frameworks.",
+            title: "Associate Software Engineer",
+            company: "Azodik Consulting Pvt. Ltd.",
+            location: "Jaipur",
+            period: "08/2023 - Present",
+            description: "Actively involved in developing web applications and contributing to mobile application development with React Native, focusing on seamless user experiences."
         },
         {
-            icon: Smartphone,
-            title: "App Development",
-            description: "Creating cross-platform mobile experiences that feel native and performant.",
+            title: "Full Stack Developer (Intern)",
+            company: "Bharti Airtel",
+            location: "Gurugram",
+            period: "08/2023 - 12/2023",
+            description: "Engaged in extensive web development work utilizing HTML, CSS and JavaScript for front-end development, alongside Java (Beginner) and Spring Tool Suite (STS) for robust back-end solutions."
         },
         {
-            icon: Palette,
-            title: "UI/UX Design",
-            description: "Designing intuitive interfaces that guide users and enhance engagement.",
+            title: "Quality Analyst",
+            company: "Zimyo Consulting Pvt. Ltd",
+            location: "Gurugram",
+            period: "07/2020 - 02/2022",
+            description: "Worked as QA with 1.8 years of experience in software testing and Quality Assurance. Worked on projects like HRMS, ATS (Applicant Tracking System), and PMS (Performance Management System)."
         },
     ];
 
     const stats = [
-        { number: "10+", label: "Years Experience" },
-        { number: "120+", label: "Projects Completed" },
-        { number: "95%", label: "Client Satisfaction" },
+        { number: "2+", label: "Years Experience" },
+        { number: "15+", label: "Projects Completed" },
+        { number: "3", label: "Companies Worked" },
     ];
 
     return (
@@ -43,17 +49,19 @@ export function AboutMe() {
                     >
                         <div>
                             <h3 className="text-xl md:text-2xl font-display font-bold mb-6">
-                                From Software Testing to <span className="text-primary">Programming</span>
+                                Passionate <span className="text-primary">Frontend Developer</span>
                             </h3>
                             <p className="text-muted-foreground leading-relaxed mb-4">
-                                I started my creative journey through manual testing. That passion for
-                                composition and detail naturally evolved into a love for building digital
-                                experiences from scratch.
+                                Seeking a career opportunity with a reputable company where I can leverage my
+                                strong IT skills and knowledge to attract new clients, drive revenue growth, and
+                                contribute to organizational success.
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
-                                Today, software development fulfills my innate desire for continuous learning
-                                and creation. I combine my artistic eye with technical precision to build
-                                applications that are not just functional, but visually compelling.
+                                I have experience in web development utilizing modern technologies like React,
+                                TypeScript, and Next.js. My journey includes working with companies like Azodik
+                                Consulting and Bharti Airtel, where I've contributed to mobile application development
+                                and robust back-end solutions. I also have a strong foundation in software testing
+                                and quality assurance from my time at Zimyo Consulting.
                             </p>
                         </div>
 
@@ -77,14 +85,14 @@ export function AboutMe() {
                         </div>
                     </motion.div>
 
-                    {/* Right Column - Services */}
+                    {/* Right Column - Work Experience */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="space-y-12"
+                        className="space-y-8"
                     >
-                        {services.map((service, idx) => (
+                        {workExperience.map((job, idx) => (
                             <motion.div
                                 key={idx}
                                 initial={{ opacity: 0, y: 20 }}
@@ -95,17 +103,19 @@ export function AboutMe() {
                             >
                                 <div className="flex-shrink-0 relative">
                                     {/* Vertical connecting line */}
-                                    {idx < services.length - 1 && (
-                                        <div className="absolute left-1/2 top-14 -translate-x-1/2 w-0.5 h-[calc(100%+3rem)] bg-primary/30" />
+                                    {idx < workExperience.length - 1 && (
+                                        <div className="absolute left-1/2 top-14 -translate-x-1/2 w-0.5 h-[calc(100%+2.5rem)] bg-primary/30" />
                                     )}
                                     {/* Circle icon */}
-                                    <div className="w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center text-primary bg-background relative z-10">
-                                        <service.icon size={24} />
+                                    <div className="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center text-primary bg-background relative z-10">
+                                        <Briefcase size={20} />
                                     </div>
                                 </div>
                                 <div className="flex-1">
-                                    <h4 className="text-xl font-bold mb-3 text-foreground">{service.title}</h4>
-                                    <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                                    <h4 className="text-lg font-bold text-foreground">{job.title}</h4>
+                                    <p className="text-primary font-medium text-sm mb-1">{job.company}</p>
+                                    <p className="text-xs text-muted-foreground mb-3">{job.location} • {job.period}</p>
+                                    <p className="text-sm text-muted-foreground leading-relaxed">{job.description}</p>
                                 </div>
                             </motion.div>
                         ))}
