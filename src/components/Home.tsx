@@ -13,7 +13,6 @@ import {
   Linkedin,
   Mail,
   MapPin,
-  ArrowRight,
   Download
 } from "lucide-react";
 import {
@@ -190,86 +189,213 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATS SECTION */}
-      <section className="py-20 bg-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-primary-foreground/10">
-            {[
-              { number: "10+", label: "Years Experience" },
-              { number: "120+", label: "Projects Completed" },
-              { number: "95%", label: "Client Satisfaction" },
-              { number: "24/7", label: "Support" },
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="text-primary-foreground"
-              >
-                <h3 className="text-4xl md:text-5xl font-display font-bold mb-2">{stat.number}</h3>
-                <p className="text-sm md:text-base font-medium opacity-80 uppercase tracking-wider">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* PROJECTS SECTION */}
-      <section id="projects" className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading title="Recent Work" subtitle="Portfolio" />
+      <section id="projects" className="py-24 bg-background relative overflow-hidden">
+        {/* Decorative background elements for Projects section */}
 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading title="Selected Projects" subtitle="A showcase of my recent engineering work" />
+
+          {/* New Bento Grid Projects Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-12 auto-rows-[200px] gap-6 mt-12">
+
+            {/* Project 1: Azodik Design System - Large Featured (Span 8x2) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="md:col-span-8 md:row-span-2 group relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 backdrop-blur-md hover:border-primary/40 transition-all duration-700 shadow-2xl flex flex-col"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute -right-20 -top-20 w-64 h-64 bg-primary/20 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+              <div className="p-10 relative h-full flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/20">
+                      Core Infrastructure
+                    </span>
+                  </div>
+                  <h3 className="text-4xl md:text-5xl font-display font-bold mb-6 tracking-tight">
+                    Azodik <span className="text-primary">Design System</span>
+                  </h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed max-w-xl">
+                    Built a CSS-first, monorepo-based design system to standardize UI across all Azodik products with reusable core, UI, and icon packages. Developed accessible, themeable React components using TypeScript.
+                  </p>
+                </div>
+
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mt-8">
+                  <div className="flex flex-wrap gap-2">
+                    {["React", "TypeScript", "Vanilla CSS", "Vite", "Turbo", "pnpm"].map(tag => (
+                      <span key={tag} className="px-3 py-1 text-xs font-medium rounded-lg bg-white/5 text-muted-foreground border border-white/5 transition-colors group-hover:border-primary/30">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Project 2: InvoiceFlow - Medium Rectangle (Span 4x2) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="md:col-span-4 md:row-span-2 group relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 backdrop-blur-md hover:border-orange-500/40 transition-all duration-700 shadow-2xl flex flex-col"
+            >
+              <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+              <div className="p-10 relative h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <Layout size={28} />
+                  </div>
+                  <h3 className="text-3xl font-display font-bold mb-4 tracking-tight">InvoiceFlow</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
+                    Multi-tenant billing platform with PDF generation, RBAC, and real-time dashboards.
+                    Built on Cloudflare Workers for edge performance.
+                  </p>
+                </div>
+
+                <div className="mt-8">
+                  <div className="flex flex-wrap gap-2">
+                    {["React", "TypeScript", "Cloudflare Workers", "Hono", "D1", "R2", "Queues", "Vite", "TanStack Query"].map(tag => (
+                      <span key={tag} className="px-2 py-1 text-[9px] font-bold uppercase rounded-md bg-orange-500/10 text-orange-500/80 border border-orange-500/20">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Project 3: Azodik Editor - Long Horizontal (Span 7x2) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="md:col-span-7 md:row-span-2 group relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 backdrop-blur-md hover:border-blue-500/40 transition-all duration-700 shadow-2xl"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+              <div className="p-10 relative h-full flex flex-col justify-between">
+                <div className="flex-1">
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-500 mb-4 block">Desktop App</span>
+                  <h3 className="text-3xl font-display font-bold mb-6 tracking-tight">Azodik Editor</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+                    Developed a high-performance desktop media editor featuring video trim, crop, and timeline-based editing. Integrated FFmpeg and Sharp for native media processing within an Electron + React application.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-8">
+                  {["Electron", "React", "TypeScript", "FFmpeg", "Sharp", "TailwindCSS", "Better-SQLite3", "Vite"].map(tag => (
+                    <span key={tag} className="px-3 py-1 text-xs font-medium rounded-lg bg-blue-500/5 text-blue-400 border border-blue-500/10 transition-colors group-hover:border-blue-400/30">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Project 4: Azodik Console - Square (Span 5x2) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="md:col-span-5 md:row-span-2 group relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 backdrop-blur-md hover:border-primary/40 transition-all duration-700 shadow-2xl"
+            >
+              <div className="p-10 relative h-full flex flex-col justify-between">
+                <div>
+                  <div className="flex gap-4 mb-8">
+                    {["Management", "Admin"].map(label => (
+                      <span key={label} className="text-[9px] uppercase font-bold tracking-widest text-muted-foreground/60">{label}</span>
+                    ))}
+                  </div>
+                  <h3 className="text-3xl font-display font-bold mb-6 tracking-tight">Azodik Console</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    Developed a centralized admin console for multi-tenant app, billing, and configuration mgt. Built scalable, accessible UI using React 19.
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <div className="flex flex-wrap gap-2">
+                    {["React", "TypeScript", "Vite", "Radix UI", "Stitches", "Jotai", "TanStack Table", "Recharts", "i18next"].map(tag => (
+                      <span key={tag} className="px-2 py-1 text-[9px] font-bold uppercase rounded-md bg-primary/10 text-primary border border-primary/20 transition-colors group-hover:border-primary/40">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Project 5: AuthZio Playground - Bottom Full Width (Span 12x1) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="md:col-span-12 md:row-span-1 group relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 backdrop-blur-md hover:border-orange-400/30 transition-all duration-700 shadow-2xl"
+            >
+              <div className="p-10 h-full flex flex-col md:flex-row md:items-center justify-between gap-8">
+                <div className="flex items-center gap-8">
+                  <div className="w-16 h-16 rounded-2xl bg-orange-400/10 flex items-center justify-center text-orange-400 group-hover:rotate-[360deg] transition-transform duration-1000">
+                    <Code2 size={32} />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-display font-bold tracking-tight">AuthZio Playground</h3>
+                    <p className="text-muted-foreground text-sm max-w-md hidden md:block">
+                      Client-side authentication and cryptography playground for modern developers.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap items-center gap-6">
+                  <div className="flex flex-wrap gap-2 max-w-xl md:justify-end">
+                    {["Next.js", "React", "TypeScript", "Tailwind CSS", "jose", "pnpm"].map(tag => (
+                      <span key={tag} className="px-3 py-1.5 rounded-xl bg-orange-400/5 text-orange-400 text-[10px] font-bold uppercase border border-orange-400/10">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Existing Projects Section - Commented Out (Preserved) */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-32">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "E-Commerce Dashboard",
-                desc: "A comprehensive analytics dashboard for online retailers featuring real-time data visualization.",
-                tags: ["React", "D3.js", "Tailwind"],
-                img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-                demo: "#",
-                github: "#"
+                title: "Mitra Healthcare – NDIS & Healthcare Services",
+                desc: "Designed and built a comprehensive healthcare management platform for an Australian NDIS provider, streamlining disability support, community nursing, and personal care coordination.",
+                tags: ["React", "TypeScript", "Tailwind"],
+                img: "/website-projects/Screenshot 2026-02-12 162449.png",
+                demo: "https://www.mitrahealthcare.com.au/"
               },
               {
-                title: "Social Media App",
-                desc: "A fully functional social platform with real-time messaging, feed updates, and user profiles.",
-                tags: ["Next.js", "Socket.io", "Prisma"],
-                img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
-                demo: "#",
-                github: "#"
+                title: "AT Web Studios – Web & Creative Agency",
+                desc: "A premium agency portfolio and service platform focusing on digital branding, high-performance web development, and online presence for modern businesses.",
+                tags: ["Next.js", "Framer Motion", "Tailwind"],
+                img: "/website-projects/Screenshot 2026-02-12 162635.png",
+                demo: "https://www.atwebstudios.com.au/"
               },
               {
-                title: "Travel Booking Platform",
-                desc: "Search and booking engine for flights and hotels with integrated payment processing.",
-                tags: ["React", "Redux", "Stripe"],
-                img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
-                demo: "#",
-                github: "#"
+                title: "Fire & Feast – Italian Restaurant",
+                desc: "Developed a sophisticated hospitality platform for an Italian restaurant brand, highlighting menu exploration, ambience, and seamless guest information delivery.",
+                tags: ["React", "Redux", "Node.js"],
+                img: "/website-projects/Screenshot 2026-02-12 162756.png",
+                demo: "https://italian-restaurant-six.vercel.app/"
               },
               {
-                title: "Fitness Tracker",
-                desc: "Mobile-first web app for tracking workouts, nutrition, and progress over time.",
-                tags: ["React Native", "Firebase", "Chart.js"],
-                img: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
-                demo: "#",
-                github: "#"
-              },
-              {
-                title: "AI Content Generator",
-                desc: "SaaS application leveraging OpenAI API to help marketers generate blog posts and ad copy.",
-                tags: ["OpenAI API", "React", "Node.js"],
-                img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-                demo: "#",
-                github: "#"
-              },
-              {
-                title: "Real Estate Portal",
-                desc: "Property listing website with map integration, virtual tours, and agent scheduling.",
-                tags: ["Vue.js", "Google Maps API", "Laravel"],
-                img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
-                demo: "#",
-                github: "#"
+                title: "Clarity – Business Consulting Services",
+                desc: "A professional corporate landing page for a management consultancy firm, delivering a clear narrative for expert services and strategic engagement.",
+                tags: ["React", "TypeScript", "Tailwind"],
+                img: "/website-projects/Screenshot 2026-02-12 162836.png",
+                demo: "https://consultancy-project-hazel.vercel.app/"
               }
             ].map((project, idx) => (
               <motion.div
@@ -285,16 +411,9 @@ export default function Home() {
                   tags={project.tags}
                   imageUrl={project.img}
                   demoUrl={project.demo}
-                  githubUrl={project.github}
                 />
               </motion.div>
             ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-all font-medium">
-              View All Projects <ArrowRight size={18} />
-            </button>
           </div>
         </div>
       </section>
