@@ -29,7 +29,7 @@ export function AboutMe() {
 
     const stats = [
         { number: "2+", label: "Years Experience" },
-        { number: "15+", label: "Projects Completed" },
+        { number: "10+", label: "Projects Completed" },
         { number: "3", label: "Companies Worked" },
     ];
 
