@@ -52,7 +52,7 @@ export function Navigation() {
                 </Link>
               ))}
               <a
-                href="/resume.pdf" // Placeholder resume link
+                href="/Bandna%20Paikaray_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 rounded-full border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-sm font-bold"
@@ -98,7 +98,9 @@ export function Navigation() {
                 </Link>
               ))}
               <a
-                href="/resume.pdf"
+                href="/Bandna%20Paikaray_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full text-center mt-4 px-4 py-3 rounded-lg bg-primary/10 text-primary font-bold border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all"
               >
                 Download Resume

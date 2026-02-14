@@ -1,6 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { SectionHeading } from "@/components/SectionHeading";
-import { ProjectCard } from "@/components/ProjectCard";
+
 import { ContactForm } from "@/components/ContactForm";
 import { AboutMe } from "@/components/AboutMe";
 import { motion } from "framer-motion";
@@ -9,11 +9,10 @@ import {
   Code2,
   Layout,
   Smartphone,
-  Github,
   Linkedin,
   Mail,
-  MapPin,
-  Download
+  Download,
+  Phone
 } from "lucide-react";
 import {
   SiReact,
@@ -69,7 +68,7 @@ export default function Home() {
                   View Projects
                 </ScrollLink>
                 <a
-                  href="/Bandna%20Paikaray%20Resume.pdf"
+                  href="/Bandna%20Paikaray_Resume.pdf"
                   target="_blank"
                   className="px-8 py-4 rounded-full font-bold border-2 border-primary text-primary hover:bg-primary/10 transition-all duration-300 flex items-center gap-2 cursor-pointer"
                 >
@@ -367,34 +366,26 @@ export default function Home() {
 
         {/* Existing Projects Section - Commented Out (Preserved) */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                title: "Mitra Healthcare – NDIS & Healthcare Services",
-                desc: "Designed and built a comprehensive healthcare management platform for an Australian NDIS provider, streamlining disability support, community nursing, and personal care coordination.",
-                tags: ["React", "TypeScript", "Tailwind"],
-                img: "/website-projects/Screenshot 2026-02-12 162449.png",
+                title: "Mitra Healthcare",
+                img: "/website-projects/mock-mitra-3.png",
                 demo: "https://www.mitrahealthcare.com.au/"
               },
               {
-                title: "AT Web Studios – Web & Creative Agency",
-                desc: "A premium agency portfolio and service platform focusing on digital branding, high-performance web development, and online presence for modern businesses.",
-                tags: ["Next.js", "Framer Motion", "Tailwind"],
-                img: "/website-projects/Screenshot 2026-02-12 162635.png",
+                title: "AT Web Studios",
+                img: "/website-projects/mock-at-web-2.png",
                 demo: "https://www.atwebstudios.com.au/"
               },
               {
-                title: "Fire & Feast – Italian Restaurant",
-                desc: "Developed a sophisticated hospitality platform for an Italian restaurant brand, highlighting menu exploration, ambience, and seamless guest information delivery.",
-                tags: ["React", "Redux", "Node.js"],
-                img: "/website-projects/Screenshot 2026-02-12 162756.png",
+                title: "Fire & Feast",
+                img: "/website-projects/mock-fire-feast.png",
                 demo: "https://italian-restaurant-six.vercel.app/"
               },
               {
-                title: "Clarity – Business Consulting Services",
-                desc: "A professional corporate landing page for a management consultancy firm, delivering a clear narrative for expert services and strategic engagement.",
-                tags: ["React", "TypeScript", "Tailwind"],
-                img: "/website-projects/Screenshot 2026-02-12 162836.png",
+                title: "Clarity",
+                img: "/website-projects/mock-consultancy-3.png",
                 demo: "https://consultancy-project-hazel.vercel.app/"
               }
             ].map((project, idx) => (
@@ -405,13 +396,23 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <ProjectCard
-                  title={project.title}
-                  description={project.desc}
-                  tags={project.tags}
-                  imageUrl={project.img}
-                  demoUrl={project.demo}
-                />
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group relative overflow-hidden rounded-2xl border border-white/10"
+                >
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                    <span className="text-white font-medium px-6 py-3 rounded-full border border-white/30 bg-white/10 backdrop-blur-md transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                      Visit Website
+                    </span>
+                  </div>
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    className="w-full aspect-video object-cover object-top transform group-hover:scale-105 transition-transform duration-700"
+                  />
+                </a>
               </motion.div>
             ))}
           </div>
@@ -444,17 +445,17 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium">contact@bandnapaikaray.dev</p>
+                    <p className="font-medium">bandnapaikaray@gmail.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                    <MapPin size={20} />
+                    <Phone size={20} />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="font-medium">Remote / Worldwide</p>
+                    <p className="text-sm text-muted-foreground">Contact</p>
+                    <p className="font-medium">+91 7978144496</p>
                   </div>
                 </div>
               </div>
@@ -462,11 +463,8 @@ export default function Home() {
               <div className="pt-8">
                 <p className="text-sm text-muted-foreground mb-4">Follow me</p>
                 <div className="flex gap-4">
-                  <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all">
+                  <a href="https://www.linkedin.com/in/bandnapaikaray/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all">
                     <Linkedin size={18} />
-                  </a>
-                  <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all">
-                    <Github size={18} />
                   </a>
                 </div>
               </div>
