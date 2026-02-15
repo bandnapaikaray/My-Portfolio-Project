@@ -197,7 +197,7 @@ export default function Home() {
           <SectionHeading title="Selected Projects" subtitle="A showcase of my recent engineering work" />
 
           {/* New Bento Grid Projects Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-12 auto-rows-[200px] gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-12 auto-rows-auto md:auto-rows-[200px] gap-6 mt-12">
 
             {/* Project 1: Azodik Design System - Large Featured (Span 8x2) */}
             <motion.div
@@ -209,17 +209,17 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="absolute -right-20 -top-20 w-64 h-64 bg-primary/20 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-              <div className="p-10 relative h-full flex flex-col justify-between">
+              <div className="p-6 md:p-10 relative h-full flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center gap-3 mb-4 md:mb-6">
                     <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/20">
                       Core Infrastructure
                     </span>
                   </div>
-                  <h3 className="text-4xl md:text-5xl font-display font-bold mb-6 tracking-tight">
+                  <h3 className="text-3xl md:text-5xl font-display font-bold mb-4 md:mb-6 tracking-tight">
                     Azodik <span className="text-primary">Design System</span>
                   </h3>
-                  <p className="text-muted-foreground text-lg leading-relaxed max-w-xl">
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xl">
                     Built a CSS-first, monorepo-based design system to standardize UI across all Azodik products with reusable core, UI, and icon packages. Developed accessible, themeable React components using TypeScript.
                   </p>
                 </div>
@@ -246,12 +246,12 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-              <div className="p-10 relative h-full flex flex-col justify-between">
+              <div className="p-6 md:p-10 relative h-full flex flex-col justify-between">
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-8 group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-6 md:mb-8 group-hover:scale-110 transition-transform duration-500">
                     <Layout size={28} />
                   </div>
-                  <h3 className="text-3xl font-display font-bold mb-4 tracking-tight">InvoiceFlow</h3>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold mb-4 tracking-tight">InvoiceFlow</h3>
                   <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
                     Multi-tenant billing platform with PDF generation, RBAC, and real-time dashboards.
                     Built on Cloudflare Workers for edge performance.
@@ -280,11 +280,11 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-              <div className="p-10 relative h-full flex flex-col justify-between">
+              <div className="p-6 md:p-10 relative h-full flex flex-col justify-between">
                 <div className="flex-1">
                   <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-500 mb-4 block">Desktop App</span>
-                  <h3 className="text-3xl font-display font-bold mb-6 tracking-tight">Azodik Editor</h3>
-                  <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+                  <h3 className="text-2xl md:text-3xl font-display font-bold mb-6 tracking-tight">Azodik Editor</h3>
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl">
                     Developed a high-performance desktop media editor featuring video trim, crop, and timeline-based editing. Integrated FFmpeg and Sharp for native media processing within an Electron + React application.
                   </p>
                 </div>
@@ -306,14 +306,14 @@ export default function Home() {
               transition={{ delay: 0.3 }}
               className="md:col-span-5 md:row-span-2 group relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 backdrop-blur-md hover:border-primary/40 transition-all duration-700 shadow-2xl"
             >
-              <div className="p-10 relative h-full flex flex-col justify-between">
+              <div className="p-6 md:p-10 relative h-full flex flex-col justify-between">
                 <div>
                   <div className="flex gap-4 mb-8">
                     {["Management", "Admin"].map(label => (
                       <span key={label} className="text-[9px] uppercase font-bold tracking-widest text-muted-foreground/60">{label}</span>
                     ))}
                   </div>
-                  <h3 className="text-3xl font-display font-bold mb-6 tracking-tight">Azodik Console</h3>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold mb-6 tracking-tight">Azodik Console</h3>
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     Developed a centralized admin console for multi-tenant app, billing, and configuration mgt. Built scalable, accessible UI using React 19.
                   </p>
@@ -338,14 +338,14 @@ export default function Home() {
               transition={{ delay: 0.4 }}
               className="md:col-span-12 md:row-span-1 group relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 backdrop-blur-md hover:border-orange-400/30 transition-all duration-700 shadow-2xl"
             >
-              <div className="p-10 h-full flex flex-col md:flex-row md:items-center justify-between gap-8">
+              <div className="p-6 md:p-10 h-full flex flex-col md:flex-row md:items-center justify-between gap-8">
                 <div className="flex items-center gap-8">
                   <div className="w-16 h-16 rounded-2xl bg-orange-400/10 flex items-center justify-center text-orange-400 group-hover:rotate-[360deg] transition-transform duration-1000">
                     <Code2 size={32} />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-display font-bold tracking-tight">AuthZio Playground</h3>
-                    <p className="text-muted-foreground text-sm max-w-md hidden md:block">
+                    <h3 className="text-2xl font-display font-bold tracking-tight mb-2">AuthZio Playground</h3>
+                    <p className="text-muted-foreground text-sm max-w-md block">
                       Client-side authentication and cryptography playground for modern developers.
                     </p>
                   </div>
