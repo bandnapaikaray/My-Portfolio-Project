@@ -29,7 +29,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 cursor-pointer">
-            <Link to="home" smooth={true} duration={500}>
+            <Link to="home" smooth={true} duration={100}>
               <span className="font-display text-2xl font-bold text-foreground">
                 Bandna<span className="text-primary">.</span>Paikaray
               </span>
@@ -44,8 +44,8 @@ export function Navigation() {
                   key={link.name}
                   to={link.to}
                   smooth={true}
-                  duration={500}
-                  offset={-70}
+                  duration={100}
+                  offset={0}
                   className="cursor-pointer text-muted-foreground hover:text-primary transition-colors duration-200 font-medium text-sm px-3 py-2"
                 >
                   {link.name}
@@ -89,8 +89,8 @@ export function Navigation() {
                   key={link.name}
                   to={link.to}
                   smooth={true}
-                  duration={500}
-                  offset={-70}
+                  duration={100}
+                  offset={0}
                   onClick={() => setIsOpen(false)}
                   className="cursor-pointer block px-3 py-4 text-base font-medium text-muted-foreground hover:text-primary hover:bg-white/5 rounded-lg transition-colors"
                 >

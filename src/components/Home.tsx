@@ -62,7 +62,7 @@ export default function Home() {
                 <ScrollLink
                   to="projects"
                   smooth={true}
-                  offset={-70}
+                  offset={0}
                   className="px-8 py-4 rounded-full font-bold bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                 >
                   View Projects
@@ -220,7 +220,7 @@ export default function Home() {
                     Azodik <span className="text-primary">Design System</span>
                   </h3>
                   <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xl">
-                    Built a CSS-first, monorepo-based design system to standardize UI across all Azodik products with reusable core, UI, and icon packages. Developed accessible, themeable React components using TypeScript.
+                    Built a CSS-first, monorepo-based design system to standardize UI across products with reusable core, UI, and icon packages. Developed accessible, themeable React components using TypeScript with dark mode support and optimized frontend builds.
                   </p>
                 </div>
 
@@ -253,14 +253,13 @@ export default function Home() {
                   </div>
                   <h3 className="text-2xl md:text-3xl font-display font-bold mb-4 tracking-tight">InvoiceFlow</h3>
                   <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
-                    Multi-tenant billing platform with PDF generation, RBAC, and real-time dashboards.
-                    Built on Cloudflare Workers for edge performance.
+                    Developed a responsive multi-tenant invoicing dashboard UI with PDF views, role-based interfaces, and real-time data visualization. Implemented efficient server-state management using TanStack Query and optimized API integration for performance.
                   </p>
                 </div>
 
                 <div className="mt-8">
                   <div className="flex flex-wrap gap-2">
-                    {["React", "TypeScript", "Cloudflare Workers", "Hono", "D1", "R2", "Queues", "Vite", "TanStack Query"].map(tag => (
+                    {["React", "TypeScript", "Vite", "TanStack Query"].map(tag => (
                       <span key={tag} className="px-2 py-1 text-[9px] font-bold uppercase rounded-md bg-orange-500/10 text-orange-500/80 border border-orange-500/20">
                         {tag}
                       </span>
@@ -285,11 +284,11 @@ export default function Home() {
                   <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-500 mb-4 block">Desktop App</span>
                   <h3 className="text-2xl md:text-3xl font-display font-bold mb-6 tracking-tight">Azodik Editor</h3>
                   <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl">
-                    Developed a high-performance desktop media editor featuring video trim, crop, and timeline-based editing. Integrated FFmpeg and Sharp for native media processing within an Electron + React application.
+                    Built a modern desktop UI for media editing including timeline-based editing, trim, and crop features. Designed responsive interfaces using React and TailwindCSS, ensuring smooth rendering and optimized UI interactions.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-8">
-                  {["Electron", "React", "TypeScript", "FFmpeg", "Sharp", "TailwindCSS", "Better-SQLite3", "Vite"].map(tag => (
+                  {["Electron", "React", "TypeScript", "TailwindCSS", "Vite"].map(tag => (
                     <span key={tag} className="px-3 py-1 text-xs font-medium rounded-lg bg-blue-500/5 text-blue-400 border border-blue-500/10 transition-colors group-hover:border-blue-400/30">
                       {tag}
                     </span>
@@ -315,12 +314,12 @@ export default function Home() {
                   </div>
                   <h3 className="text-2xl md:text-3xl font-display font-bold mb-6 tracking-tight">Azodik Console</h3>
                   <p className="text-muted-foreground leading-relaxed mb-6">
-                    Developed a centralized admin console for multi-tenant app, billing, and configuration mgt. Built scalable, accessible UI using React 19.
+                    Developed a comprehensive multi-tenant SaaS management platform which serves as an admin console for the Azodik platform. Implemented a centralized dashboard for managing cloud-based applications, workspaces, and services with enterprise-level features.
                   </p>
                 </div>
                 <div className="mt-auto">
                   <div className="flex flex-wrap gap-2">
-                    {["React", "TypeScript", "Vite", "Radix UI", "Stitches", "Jotai", "TanStack Table", "Recharts", "i18next"].map(tag => (
+                    {["React", "TypeScript", "Vite", "Radix UI", "TanStack Table", "Recharts", "i18next"].map(tag => (
                       <span key={tag} className="px-2 py-1 text-[9px] font-bold uppercase rounded-md bg-primary/10 text-primary border border-primary/20 transition-colors group-hover:border-primary/40">
                         {tag}
                       </span>
@@ -346,13 +345,13 @@ export default function Home() {
                   <div>
                     <h3 className="text-2xl font-display font-bold tracking-tight mb-2">AuthZio Playground</h3>
                     <p className="text-muted-foreground text-sm max-w-md block">
-                      Client-side authentication and cryptography playground for modern developers.
+                      Built a client-side authentication utility interface for JWT, Base64, UUID, and OTP tools. Developed using Next.js App Router with focus on performance, reusable components, and clean UX.
                     </p>
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center gap-6">
                   <div className="flex flex-wrap gap-2 max-w-xl md:justify-end">
-                    {["Next.js", "React", "TypeScript", "Tailwind CSS", "jose", "pnpm"].map(tag => (
+                    {["Next.js", "React", "TypeScript", "TailwindCSS 4", "pnpm"].map(tag => (
                       <span key={tag} className="px-3 py-1.5 rounded-xl bg-orange-400/5 text-orange-400 text-[10px] font-bold uppercase border border-orange-400/10">
                         {tag}
                       </span>
